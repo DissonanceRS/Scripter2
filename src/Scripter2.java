@@ -59,7 +59,9 @@ public class Scripter2 extends Script {
         if (getInventory().getAmount("Logs") == 28) {
             Item fifthItem = getInventory().getItemInSlot(4);
             if (fifthItem != null && fifthItem.getName().equals("Logs")) {
-                getInventory().interact(4, "Drop");
+                getMouse().click(getInventory().getMouseDestination(4), true);
+                getMouse().move(getMouse().getPosition().x, getMouse().getPosition().y + 40);
+                getMouse().click(false);
             }
         }
     }
